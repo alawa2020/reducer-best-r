@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import Form from './components/Form';
 import ListTodos from './components/ListTodos';
 import TodoContext from './contexts/TodoContext';
@@ -7,20 +7,12 @@ import todoReducer from './reducers/todoReducer';
 
 const AppReducer = () => {
   const init = () => {
-    return [
-      {
-        id: new Date().getTime(),
-        todo: 'Learn React',
-        done: true,
-      },
-      {
-        id: new Date().getTime() + 1,
-        todo: 'Learn Node',
-        done: false,
-      },
-    ];
+    return JSON.parse(localStorage.getItem('list-todos-best')) || [];
   };
   const [todos, dispatch] = useReducer(todoReducer, [], init);
+  useEffect(() => {
+    localStorage.setItem('list-todos-best', JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <div>

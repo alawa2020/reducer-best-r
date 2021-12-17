@@ -3,7 +3,7 @@ import TodoContext from '../contexts/TodoContext';
 import useForm from '../hooks/useForm';
 
 const Form = () => {
-  const { todos, dispatch } = useContext(TodoContext);
+  const { dispatch } = useContext(TodoContext);
 
   const [{ task }, handleChange, resetForm] = useForm({
     task: '',
