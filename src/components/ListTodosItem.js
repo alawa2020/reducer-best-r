@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import TodoContext from '../contexts/TodoContext';
 
 const ListTodosItem = ({ todo, id, done, index }) => {
-  const { dispatch } = useContext(TodoContext);
+  const { dispatch, setEditionMode } = useContext(TodoContext);
 
   const toggleChange = () => {
     dispatch({
@@ -17,6 +17,11 @@ const ListTodosItem = ({ todo, id, done, index }) => {
       payload: id,
     });
   };
+
+  const editClick = () => {
+    setEditionMode({ id, state: true, todo });
+  };
+
   return (
     <tr>
       <td>{index + 1}</td>
@@ -36,7 +41,11 @@ const ListTodosItem = ({ todo, id, done, index }) => {
       </td>
 
       <td>
-        <button className="btn btn-outline-warning mr-2" type="button">
+        <button
+          onClick={editClick}
+          className="btn btn-outline-warning mr-2"
+          type="button"
+        >
           Edit
         </button>
         <button
