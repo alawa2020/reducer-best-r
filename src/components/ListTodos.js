@@ -1,23 +1,10 @@
-import React, { useReducer } from 'react';
-import todoReducer from '../reducers/todoReducer';
+import React, { useContext } from 'react';
+import TodoContext from '../contexts/TodoContext';
 import ListTodosItem from './ListTodosItem';
 
 const ListTodos = () => {
-  const init = () => {
-    return [
-      {
-        id: new Date().getTime(),
-        todo: 'Learn React',
-        done: true,
-      },
-      {
-        id: new Date().getTime() + 1,
-        todo: 'Learn Node',
-        done: false,
-      },
-    ];
-  };
-  const [todos, dispatch] = useReducer(todoReducer, [], init);
+  const { todos, dispatch } = useContext(TodoContext);
+
   return (
     <div>
       <h2>List Todos</h2>
