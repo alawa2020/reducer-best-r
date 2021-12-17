@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import TodoContext from '../contexts/TodoContext';
 
 const ListTodosItem = ({ todo, id, done, index }) => {
+  const { dispatch } = useContext(TodoContext);
+
+  const toggleChange = () => {
+    dispatch({
+      type: 'toggle',
+      payload: id,
+    });
+  };
   return (
     <tr>
       <td>{index + 1}</td>
@@ -10,7 +19,11 @@ const ListTodosItem = ({ todo, id, done, index }) => {
       <td>{id}</td>
       <td>
         {done ? <span>✔️</span> : <span>❌</span>}{' '}
-        <button className="btn btn-outline-info" type="button">
+        <button
+          onClick={toggleChange}
+          className="btn btn-outline-info"
+          type="button"
+        >
           Change
         </button>
       </td>

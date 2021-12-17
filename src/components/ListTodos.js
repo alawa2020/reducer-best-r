@@ -3,7 +3,7 @@ import TodoContext from '../contexts/TodoContext';
 import ListTodosItem from './ListTodosItem';
 
 const ListTodos = () => {
-  const { todos, dispatch } = useContext(TodoContext);
+  const { todos } = useContext(TodoContext);
 
   return (
     <div>
