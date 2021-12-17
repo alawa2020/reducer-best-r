@@ -10,6 +10,13 @@ const ListTodosItem = ({ todo, id, done, index }) => {
       payload: id,
     });
   };
+
+  const deleteClick = () => {
+    dispatch({
+      type: 'delete',
+      payload: id,
+    });
+  };
   return (
     <tr>
       <td>{index + 1}</td>
@@ -32,7 +39,11 @@ const ListTodosItem = ({ todo, id, done, index }) => {
         <button className="btn btn-outline-warning mr-2" type="button">
           Edit
         </button>
-        <button className="btn btn-outline-danger" type="button">
+        <button
+          onClick={deleteClick}
+          className="btn btn-outline-danger"
+          type="button"
+        >
           Delete
         </button>
       </td>
