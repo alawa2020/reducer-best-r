@@ -64,7 +64,7 @@ const Form = () => {
               : 'btn btn-outline-warning'
           }
           type="submit"
-          value={!editionMode.state ? 'Add' : 'Edit'}
+          value={!editionMode.state ? 'Add' : 'Save'}
           disabled={!(task.trim().length > 2)}
         />
         {editionMode.state && (

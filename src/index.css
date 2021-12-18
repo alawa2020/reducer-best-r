@@ -17,8 +17,14 @@ table {
 
 .table-x {
   overflow-x: auto;
+  max-height: 600px;
 }
 
 .complete {
   text-decoration: line-through;
+}
+
+.title-color {
+  color: rgb(114, 114, 114);
+  font-size: large;
 }
