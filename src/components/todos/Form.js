@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import TodoContext from '../contexts/TodoContext';
-import useForm from '../hooks/useForm';
+import TodoContext from '../../contexts/TodoContext';
+import useForm from '../../hooks/useForm';
 
 const Form = () => {
   const { dispatch, editionMode, setEditionMode } = useContext(TodoContext);

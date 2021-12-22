@@ -1,9 +1,10 @@
 import React, { useEffect, useReducer, useState } from 'react';
-import Form from './components/Form';
-import ListTodos from './components/ListTodos';
+import TodosScreen from './components/todos/TodosScreen';
+import NavBar from './components/ui/NavBar';
 import TodoContext from './contexts/TodoContext';
 
 import todoReducer from './reducers/todoReducer';
+import AppRouter from './routers/AppRouter';
 
 const AppReducer = () => {
   const init = () => {
@@ -27,16 +28,7 @@ const AppReducer = () => {
       <TodoContext.Provider
         value={{ todos, dispatch, editionMode, setEditionMode }}
       >
-        <h1>AppReducer! </h1>
-        <hr />
-        <div className="row">
-          <div className="col-9">
-            <ListTodos />
-          </div>
-          <div className="col-3">
-            <Form />
-          </div>
-        </div>
+        <AppRouter />
       </TodoContext.Provider>
     </div>
   );
