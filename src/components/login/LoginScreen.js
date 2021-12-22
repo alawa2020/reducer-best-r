@@ -16,13 +16,15 @@ const LoginScreen = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatchAuth({
-      type: types.login,
-      payload: {
-        name: nick,
-      },
-    });
-    history.replace('/');
+    if (nick.trim().length > 2) {
+      dispatchAuth({
+        type: types.login,
+        payload: {
+          name: nick,
+        },
+      });
+      history.replace('/');
+    }
   };
 
   return (
