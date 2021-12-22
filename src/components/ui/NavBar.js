@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { useHistory, Link, NavLink } from 'react-router-dom';
+import TodoContext from '../../contexts/TodoContext';
+import types from '../../types/types';
 
 const NavBar = () => {
+  const { userAuth, dispatchAuth } = useContext(TodoContext);
   const history = useHistory();
 
   const handleClickLogout = () => {
+    dispatchAuth({
+      type: types.logout,
+    });
     history.replace('/login');
   };
   return (
@@ -31,7 +37,7 @@ const NavBar = () => {
             </NavLink>
           </li>
         </ul>
-        <span className="navbar-text text-info">Pedro</span>
+        <span className="navbar-text text-info">{userAuth.name}</span>
         <button
           onClick={handleClickLogout}
           type="button"

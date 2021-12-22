@@ -27,8 +27,11 @@ const AppReducer = () => {
 
   // userReducer of auth
   const initAuth = () => {
-    return localStorage.getItem('user-auth-todos') || { logged: false };
+    return (
+      JSON.parse(localStorage.getItem('user-auth-todos')) || { logged: false }
+    );
   };
+
   const [userAuth, dispatchAuth] = useReducer(authReducer, {}, initAuth);
 
   useEffect(() => {
