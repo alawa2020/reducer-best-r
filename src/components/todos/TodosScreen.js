@@ -5,14 +5,9 @@ import ListTodos from './ListTodos';
 const TodosScreen = () => {
   return (
     <div>
-      <div className="row">
-        <div className="col-9">
-          <ListTodos />
-        </div>
-        <div className="col-3">
-          <Form />
-        </div>
-      </div>
+      <Form />
+      <hr />
+      <ListTodos />
     </div>
   );
 };

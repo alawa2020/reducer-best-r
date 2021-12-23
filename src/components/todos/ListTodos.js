@@ -5,11 +5,10 @@ import Title from './Title';
 
 const ListTodos = () => {
   const { todos } = useContext(TodoContext);
-
+  console.log('gaaa!');
   return (
     <div>
       <Title todos={todos} />
-      <hr />
       {!todos.length ? (
         <p className="animate__animated animate__fadeIn">
           Your Todo List is empty!

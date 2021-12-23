@@ -1,7 +1,5 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import authReducer from './auth/authReducer';
-import TodosScreen from './components/todos/TodosScreen';
-import NavBar from './components/ui/NavBar';
 import TodoContext from './contexts/TodoContext';
 
 import todoReducer from './reducers/todoReducer';
