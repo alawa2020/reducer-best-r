@@ -23,7 +23,7 @@ const ListTodosItem = ({ todo, id, done, index }) => {
   };
 
   return (
-    <tr className="animate__animated animate__fadeIn">
+    <tr className="">
       <td>{index + 1}</td>
       <td>
         <span className={`${done && 'complete'}`}>{todo} </span>

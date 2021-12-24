@@ -5,7 +5,6 @@ import Title from './Title';
 
 const ListTodos = () => {
   const { todos } = useContext(TodoContext);
-  console.log('gaaa!');
   return (
     <div>
       <Title todos={todos} />
@@ -14,7 +13,8 @@ const ListTodos = () => {
           Your Todo List is empty!
         </p>
       ) : (
-        <div className="table-x animate__animated animate__fadeIn">
+        // <div className="table-x animate__animated animate__fadeIn">
+        <div className="table-x">
           <table className="table table-dark">
             <thead>
               <tr>

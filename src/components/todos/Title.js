@@ -19,7 +19,7 @@ const Title = ({ todos }) => {
         Todo List{' '}
         {!!todos.length && (
           <span className="animate__animated animate__fadeIn title-color">
-            ({percentDone}% complete)
+            ( <span>{percentDone}</span>% complete)
           </span>
         )}
       </h2>
